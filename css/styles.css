@@ -1,13 +1,28 @@
 body {
-    font-family: 'Playfair Display', serif; /* Apply the font globally */
+    font-family: 'Merriweather', serif; /* Apply the font globally */
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, purple, midnightblue);
-    color: #333;
+    background: linear-gradient(135deg, #c3c7df, #eec7b3, #31221e, #695e93);
+    background-size: 400% 400%; /* For background animation */
+    animation: gradientAnimation 10s ease infinite; /* Background animation */
+    color: #020734;
+    font-size: 28px; /* Set global font size */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-background {
+    background: var(--gradient-background, linear-gradient(135deg, #D8BFD8, #613659));
+    background-size: 400% 400%; /* For background animation */
+    animation: gradientAnimation 10s ease infinite; /* Background animation */
 }
 
 header {
-    background: rgba(53, 66, 74, 0.8);
+    --gradient-background: linear-gradient(135deg, rgba(94, 142, 173, 0.8), rgba(1, 41, 66, 0.5));
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
@@ -16,6 +31,7 @@ header {
 
 header h1 {
     margin: 0;
+    font-size: 64px;
 }
 
 header img.mascot {
@@ -30,8 +46,8 @@ nav {
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
-    background: rgba(53, 66, 74, 0.8);
     padding: 10px 0;
+    font-size: 28px;
 }
 
 nav a {
@@ -61,7 +77,6 @@ nav ul li {
 nav ul li a {
     text-decoration: none; /* Remove underline from links */
     color: #fff; /* Set link color to light */
-    font-size: 24px; /* Increase font size */
     font-weight: bold; /* Make the text bold */
 }
 
@@ -70,12 +85,7 @@ nav ul li a:hover {
 }
 
 .contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Ensure form fits within the section */
 }
 
 .form-group {
@@ -104,26 +114,28 @@ nav ul li a:hover {
 .submit-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #000000;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 .submit-button:hover {
-    background-color: #0056b3;
+    background-color: #05458a;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
 
 section h2 {
-    font-size: 24px;
+    font-size: 48px;
     margin-bottom: 10px;
+    color: #000000; /* Darker color for better readability */
 }
 
 section p {
-    font-size: 18px;
     margin: 5px 0;
+    line-height: 1.6; /* Improve readability with better line spacing */
 }
 
 section p i {
@@ -134,32 +146,76 @@ section p i {
 section p a {
     color: #007BFF; /* Link color */
     text-decoration: none;
+    border-bottom: 1px solid transparent; /* Add underline effect */
+    transition: border-bottom 0.3s ease; /* Smooth transition for underline */
 }
 
 section p a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px solid #007BFF; /* Underline on hover */
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+.horizontal-sections {
+    display: flex; /* Use flexbox to display sections horizontally */
+    justify-content: space-between; /* Add space between sections */
+    gap: 20px; /* Add gap between sections */
 }
 
-section {
+.horizontal-sections section {
+    flex: 1; /* Allow sections to grow and fill the available space */
     padding: 20px;
     background: #ffffff;
-    margin: 20px 0;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+
+.horizontal-sections section:hover {
+    transform: translateY(-5px); /* Slightly lift the section on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.project-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+/* Ensure all images have equal width and height */
+.project-container .image {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Adjust as needed */
+    max-height: 200px; /* Adjust as needed */
+    object-fit: cover;
+}
+
+/* Style the overlay */
+.project-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-container:hover .overlay {
+    opacity: 1;
 }
 
 footer {
     text-align: center;
     padding: 10px 0;
-    background: rgba(53, 66, 74, 0.8);
     color: #ffffff;
     position: relative;
     bottom: 0;
     width: 100%;
+    font-size: 28px;
 }

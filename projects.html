@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Art Projects</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -22,21 +22,55 @@
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Project 1: Project Title</h2>
-            <p>Description of the project goes here. Explain what the project is about, its purpose, and any challenges faced during development.</p>
-            <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript</p>
-            <a href="https://github.com/username/project1" target="_blank">View on GitHub</a>
-        </section>
-        <section>
-            <h2>Project 2: Project Title</h2>
-            <p>Description of the project goes here. Explain what the project is about, its purpose, and any challenges faced during development.</p>
-            <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript</p>
-            <a href="https://github.com/username/project2" target="_blank">View on GitHub</a>
-        </section>
-        <!-- Add more projects as needed -->
+        <div class="masthead" id="project-masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center headerClass">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                <div class="text-white all-projects-header text-uppercase">All Projects</div>
+                <div class="divider-container proj-divider">
+                    <div class="section-divider"></div>
+                </div>
+                <div class="text-white all-projects-subtext">Explore the projects below</div>
+                <div class="d-flex flex-row justify-content-center">
+                    <!-- Art Project -->
+                    <div class="project-container mx-2">
+                    <a href="art.html" class="project-wrapper">
+                        <img class="image" src="works/Art/L06_Final...-.jpg" />
+                        <div class="overlay">
+                        <div class="text-white">
+                            <h2 class="text-uppercase">Art Project</h2>
+                            <p class="highlighted-text">Click Here to See what art I have created before</p>
+                        </div>
+                        </div>
+                    </a>
+                    <div class="project-title text-white text-uppercase">Art Project</div>
+                    </div>
+                    <div class="divider-container mx-2">
+                    <div class="section-divider-indiv"></div>
+                    </div>
+                    <!-- Website Project -->
+                    <div class="project-container mx-2">
+                    <a href="websites.html" class="project-wrapper">
+                        <img class="image" src="works/Website Image/pizza.jpg" />
+                        <div class="overlay">
+                        <div class="text-white">
+                            <h2 class="text-uppercase">Website Project</h2>
+                            <p class="highlighted-text">Click Here to see what websites I have designed before</p>
+                        </div>
+                        </div>
+                    </a>
+                    <div class="project-title text-white text-uppercase">Website Project</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
     </main>
     <footer>
+        <p><i class="fas fa-map-marker-alt"></i> Singapore</p>
+        <p><i class="fas fa-envelope"></i> Email: chelynljl@gmail.com</p>
+        <p><i class="fas fa-phone"></i> Phone: (+65) 8510 8012</p>
         <p>&copy; 2025 ChelynLim. All rights reserved.</p>
     </footer>
     <script src="js/scripts.js"></script>

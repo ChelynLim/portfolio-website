@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Art Projects</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <figure>
+                    <img src="works/Art/L06_Final...-.jpg" alt="Music Festival Poster" class="img-thumbnail" onclick="openModal(this)">
+                    <figcaption>This is a music festival poster created using Illustrator</figcaption>
+                </figure>
+                <figure>
+                    <video src="works/Art/Recording 2024-12-02 225631.mp4" alt="Mock Website" class="img-thumbnail" onclick="openModal(this)">
+                    </video>
+                    <figcaption>This is a mock website created using Figma</figcaption>
+                </figure>
+                <figure>
+                    <img src="works/Art/L06_Final...-.jpg" alt="Art 3" class="img-thumbnail" onclick="openModal(this)">
+                    <figcaption>Art 3 Description</figcaption>
+                </figure>
+                <!-- Add more artworks as needed -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p><i class="fas fa-map-marker-alt"></i> Singapore</p>
+        <p><i class="fas fa-envelope"></i> Email: chelynljl@gmail.com</p>
+        <p><i class="fas fa-phone"></i> Phone: (+65) 8510 8012</p>
+        <p>&copy; 2025 ChelynLim. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal for full image and video view -->
+    <div class="modal fade" id="mediaModal" tabindex="-1" aria-labelledby="mediaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mediaModalLabel">Full View</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="Full Image" class="img-fluid d-none">
+                    <video id="modalVideo" controls class="img-fluid d-none">
+                        <source id="modalVideoSource" src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(element) {
+            const isImage = element.tagName.toLowerCase() === 'img';
+            const modalImage = document.getElementById('modalImage');
+            const modalVideo = document.getElementById('modalVideo');
+            const modalVideoSource = document.getElementById('modalVideoSource');
+
+            if (isImage) {
+                modalImage.src = element.src;
+                modalImage.classList.remove('d-none');
+                modalVideo.classList.add('d-none');
+            } else {
+                modalVideoSource.src = element.src;
+                modalVideo.load();
+                modalVideo.classList.remove('d-none');
+                modalImage.classList.add('d-none');
+            }
+
+            $('#mediaModal').modal('show');
+        }
+    </script>
+</body>
+</html>
