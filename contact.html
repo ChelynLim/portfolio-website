@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <!-- Existing code -->
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Contact Me</h1>
+    <header class="gradient-background">
+        <h1>Chelyn's Portfolio Website</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -23,30 +21,35 @@
             </ul>
         </nav>
     </header>
-    <main class="horizontal-sections">
-        <section>
-            <h2>Get in Touch</h2>
-            <form action="#" method="post" class="contact-form">
+    <main>
+        <div class="container mt-5">
+            <h2 class="text-center">Get in Touch</h2>
+            <form action="submit_form.php" method="post" class="contact-form mt-4">
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="submit-button">Send Message</button>
             </form>
-        </section>
+        </div>
     </main>
-    <footer>
+    <footer class="gradient-background text-center mt-5">
         <p><i class="fas fa-map-marker-alt"></i> Singapore</p>
-        <p><i class="fas fa-envelope"></i> Email: chelynljl@gmail.com</a></p>
-            <p><i class="fas fa-phone"></i> Phone: (+65) 8510 8012</a></p>
+        <p><i class="fas fa-envelope"></i> Email: chelynljl@gmail.com</p>
+        <p><i class="fas fa-phone"></i> Phone: (+65) 8510 8012</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/chelyn-lim-9021b5238/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/ChelynLim" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/chelyn.lim.92/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
         <p>&copy; 2025 ChelynLim. All rights reserved.</p>
     </footer>
     <script src="js/scripts.js"></script>

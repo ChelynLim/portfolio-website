@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Slideshow</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
+    <header class="gradient-background">
+        <h1>Chelyn's Portfolio Website</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -21,34 +20,107 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>Brief introduction about yourself and your professional background.</p>
-        </section>
-        <section>
-            <h2>My Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>Javascript</li>
-                <li>Java</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Photoshop</li>
-                <li>Illustrator</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Latest Projects</h2>
-            <p>Highlight some of your recent work and achievements.</p>
-        </section>
-    </main>
-    <footer>
-        <p><i class="fas fa-map-marker-alt"></i> Singapore</p>
-        <p><i class="fas fa-envelope"></i> Email: chelynljl@gmail.com</a></p>
-            <p><i class="fas fa-phone"></i> Phone: (+65) 8510 8012</a></p>
-        <p>&copy; 2025 ChelynLim. All rights reserved.</p>
-    </footer>
-    <script src="js/scripts.js"></script>
+
+    <section>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="works/me/MeDrink.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="works/me/PartTime.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="works/me/PartTime1.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="works/me/MytwoBFFs.jpg" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="works/me/Bestie.jpg" style="width:100%">
+            </div>
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+    <script>
+    let slideIndex = 0;
+    let slideInterval;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        slideInterval = setTimeout(showSlides, 3000); // Change image every 5 seconds
+    }
+    </script>
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+        }
+        
+        .mySlides {
+            display: none;
+        }
+        
+        .mySlides img {
+            width: 100%;
+            height: 750px; /* Set a fixed height for the images */
+            object-fit: cover; /* Ensure the images cover the area while maintaining aspect ratio */
+        }
+        
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        </style>
+        <script>
+  function updateTextColor() {
+    const body = document.body;
+    const bgColor = window.getComputedStyle(body).backgroundImage;
+    const colors = bgColor.match(/rgb\((\d+), (\d+), (\d+)\)/g).map(color => {
+      const rgb = color.match(/\d+/g).map(Number);
+      return (rgb[0] * 0.299 + rgb[1] * 0.587 + rgb[2] * 0.114) > 186 ? 'black' : 'white';
+    });
+
+    body.style.color = colors[0];
+  }
+
+  setInterval(updateTextColor, 1000); // Update text color every second
+  updateTextColor(); // Initial call
+</script>
+
+<footer class="gradient-background text-center mt-5">
+    <p><i class="fas fa-map-marker-alt"></i> Singapore</p>
+    <p><i class="fas fa-envelope"></i> Email: chelynljl@gmail.com</p>
+    <p><i class="fas fa-phone"></i> Phone: (+65) 8510 8012</p>
+    <div class="social-icons"></div>
+        <a href="https://www.linkedin.com/in/chelyn-lim-9021b5238/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/ChelynLim" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.facebook.com/chelyn.lim.92/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+    <p>&copy; 2025 ChelynLim. All rights reserved.</p>
+</footer>
+
+<script src="js/scripts.js"></script>
 </body>
 </html>

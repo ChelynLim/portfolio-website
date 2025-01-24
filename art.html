@@ -8,10 +8,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .img-thumbnail {
+            width: 300px; /* Set the initial size of the images */
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Art Projects</h1>
+        <h1>Chelyn's Portfolio Website</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -24,27 +31,35 @@
     <main>
         <section>
             <div class="container">
-                <figure>
-                    <img src="works/Art/L06_Final...-.jpg" alt="Music Festival Poster" class="img-thumbnail" onclick="openModal(this)">
+                <figure class="center-content">
+                    <img src="works/Art/L06_Final...-.jpg" alt="Music Festival Poster" class="img-thumbnail medium-img" onclick="openModal(this)">
                     <figcaption>This is a music festival poster created using Illustrator</figcaption>
                 </figure>
-                <figure>
-                    <video src="works/Art/Recording 2024-12-02 225631.mp4" alt="Mock Website" class="img-thumbnail" onclick="openModal(this)">
-                    </video>
+                <figure class="center-content">
+                    <video src="works/Art/Recording 2024-12-02 225631.mp4" alt="Mock Website" class="img-thumbnail medium-img" controls onclick="openModal(this)"></video>
                     <figcaption>This is a mock website created using Figma</figcaption>
                 </figure>
-                <figure>
-                    <img src="works/Art/L06_Final...-.jpg" alt="Art 3" class="img-thumbnail" onclick="openModal(this)">
-                    <figcaption>Art 3 Description</figcaption>
+                <figure class="center-content">
+                    <img src="works/Art/PosterDesign.jpg" alt="Art 3" class="img-thumbnail medium-img" onclick="openModal(this)">
+                    <figcaption>This is a personal poster designed by me to show what I like</figcaption>
+                </figure>
+                <figure class="center-content">
+                    <img src="works/Art/MagazineDesign.jpg" alt="Art 4" class="img-thumbnail medium-img" onclick="openModal(this)">
+                    <figcaption>This is a Magazine designed by me to show people what type of vacation they can have</figcaption>
                 </figure>
                 <!-- Add more artworks as needed -->
             </div>
         </section>
     </main>
-    <footer>
+    <footer class="gradient-background text-center mt-5">
         <p><i class="fas fa-map-marker-alt"></i> Singapore</p>
         <p><i class="fas fa-envelope"></i> Email: chelynljl@gmail.com</p>
         <p><i class="fas fa-phone"></i> Phone: (+65) 8510 8012</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/chelyn-lim-9021b5238/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/ChelynLim" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/chelyn.lim.92/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
         <p>&copy; 2025 ChelynLim. All rights reserved.</p>
     </footer>
 
@@ -90,5 +105,8 @@
             $('#mediaModal').modal('show');
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
