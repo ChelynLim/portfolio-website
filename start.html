@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .start-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #733f8f, #807dc7, #d3c8e6, #90a0dc); /* Same gradient as the rest of your website */
+            text-align: center;
+        }
+        .start-page h1 {
+            font-size: 3em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .start-page img {
+            width: 200px; /* Adjust the width as needed */
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="start-page">
+        <h1>Welcome to Chelyn's Portfolio</h1>
+        <img src="works/CL.jpg" alt="Chelyn's Logo">
+    </div>
+
+    <script>
+        // Redirect to the homepage after 3 seconds
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 5000);
+    </script>
+</body>
+</html>

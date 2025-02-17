@@ -29,11 +29,11 @@
                     <figcaption>This is a Pizza Website created using Javascript. Visit the website <a href="https://pizzaapp-sooty.vercel.app/"><strong>here</strong></a>.</figcaption>
                 </figure>
                 <figure class="center-content">
-                    <video src="works/Website/TravelList.mp4" alt="TravelList" class="img-thumbnail medium-img" controls onclick="openModal(this)"></video>
+                    <img src="works/Website/Travel.jpg" alt="TravelList" class="img-thumbnail medium-img" data-type="video" data-video-src="works/Website/TravelList.mp4" onclick="openModal(this)">
                     <figcaption>This is a TravelList website created using JavaScript. Visit the website <a href="https://travel-list-app-starter-6h2u.vercel.app/"><strong>here</strong></a>.</figcaption>
                 </figure>
                 <figure class="center-content">
-                    <video src="works/Website/moviefinder.mp4" alt="Movie Finder" class="img-thumbnail medium-img" controls onclick="openModal(this)"></video>
+                    <img src="works/Website/movie.jpg" alt="Movie Finder" class="img-thumbnail medium-img" data-type="video" data-video-src="works/Website/moviefinder.mp4" onclick="openModal(this)">
                     <figcaption>This is a Movie Finder Website created using Javascript. Visit the website <a href="https://movie-app-starter.vercel.app/"><strong>here</strong></a>.</figcaption>
                 </figure>
                 <figure class="center-content">
@@ -84,14 +84,17 @@
             const modalVideoSource = document.getElementById('modalVideoSource');
 
             if (isImage) {
-                modalImage.src = element.src;
-                modalImage.classList.remove('d-none');
-                modalVideo.classList.add('d-none');
-            } else {
-                modalVideoSource.src = element.src;
-                modalVideo.load();
-                modalVideo.classList.remove('d-none');
-                modalImage.classList.add('d-none');
+                const dataType = element.getAttribute('data-type');
+                if (dataType === 'video') {
+                    modalVideoSource.src = element.getAttribute('data-video-src');
+                    modalVideo.load();
+                    modalVideo.classList.remove('d-none');
+                    modalImage.classList.add('d-none');
+                } else {
+                    modalImage.src = element.src;
+                    modalImage.classList.remove('d-none');
+                    modalVideo.classList.add('d-none');
+                }
             }
 
             $('#mediaModal').modal('show');

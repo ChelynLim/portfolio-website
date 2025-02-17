@@ -9,10 +9,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .img-thumbnail {
-            width: 300px; /* Set the initial size of the images */
-            height: auto;
+        .media-thumbnail {
+            width: 500px; /* Set the desired width */
+            height: 400px; /* Set the desired height */
+            object-fit: cover; /* Ensure the content fits within the specified dimensions */
             cursor: pointer;
+        }
+        .center-content {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -32,19 +37,19 @@
         <section>
             <div class="container">
                 <figure class="center-content">
-                    <img src="works/Art/L06_Final...-.jpg" alt="Music Festival Poster" class="img-thumbnail medium-img" onclick="openModal(this)">
-                    <figcaption>This is a music festival poster created using Illustrator</figcaption>
+                    <img src="works/Art/L06_Final...-.jpg" alt="Music Festival Poster" class="media-thumbnail" onclick="openModal(this)">
+                    <figcaption>This is mini project for a class where i am supposed to create a music festival poster created using Illustrator</figcaption>
                 </figure>
                 <figure class="center-content">
-                    <video src="works/Art/Recording 2024-12-02 225631.mp4" alt="Mock Website" class="img-thumbnail medium-img" controls onclick="openModal(this)"></video>
-                    <figcaption>This is a mock website created using Figma</figcaption>
+                    <video src="works/Art/Recording 2024-12-02 225631.mp4" alt="Mock Website" class="media-thumbnail" controls onclick="openModal(this)"></video>
+                    <figcaption>This is a mini mock website created using Figma for a mini project also</figcaption>
                 </figure>
                 <figure class="center-content">
-                    <img src="works/Art/PosterDesign.jpg" alt="Art 3" class="img-thumbnail medium-img" onclick="openModal(this)">
+                    <img src="works/Art/PosterDesign.jpg" alt="Art 3" class="media-thumbnail" onclick="openModal(this)">
                     <figcaption>This is a personal poster designed by me to show what I like</figcaption>
                 </figure>
                 <figure class="center-content">
-                    <img src="works/Art/MagazineDesign.jpg" alt="Art 4" class="img-thumbnail medium-img" onclick="openModal(this)">
+                    <img src="works/Art/MagazineDesign.jpg" alt="Art 4" class="media-thumbnail" onclick="openModal(this)">
                     <figcaption>This is a Magazine designed by me to show people what type of vacation they can have</figcaption>
                 </figure>
                 <!-- Add more artworks as needed -->
